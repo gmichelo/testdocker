@@ -4,7 +4,7 @@ name: simple
 
 jobs:
   ci:
-    runs-on: [nsc]
+    runs-on: [nsc-ubuntu-22.04-amd64-2x8]
     steps:
       - name: Env checks
         run: |
