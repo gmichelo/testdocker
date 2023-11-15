@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nsc-gmichelo
+      - namespace
     steps:
       - name: Env checks
         run: |
