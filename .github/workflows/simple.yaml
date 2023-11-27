@@ -22,6 +22,8 @@ jobs:
         with:
           fetch-depth: 10
 
+      - uses: actions/setup-go@v4
+      
       - run: |
           time docker pull ubuntu
   ci-gh-runner:
