@@ -9,6 +9,7 @@ jobs:
       - nscloud-cache-tag-e2e-tests
       - nscloud-cache-size-2gb
       - nscloud-exp-container-image-cache
+      - nscloud-no-remote-builders
     steps:
       - name: Env checks
         run: |
