@@ -11,6 +11,7 @@ jobs:
       - nscloud-exp-container-image-cache
       - nscloud-no-remote-builders
       - nscloud-git-mirror-5gb
+      - nscloud-exp-runner-tool-cache-20gb
     steps:
       - name: Env checks
         run: |
