@@ -10,6 +10,7 @@ jobs:
       - nscloud-cache-size-2gb
       - nscloud-exp-container-image-cache
       - nscloud-no-remote-builders
+      - nscloud-git-mirror-5gb
     steps:
       - name: Env checks
         run: |
@@ -22,6 +23,7 @@ jobs:
           locale
           docker version
           docker buildx version
+          ls /
           cd /cache && df -h .
           ls -lta /cache
 
