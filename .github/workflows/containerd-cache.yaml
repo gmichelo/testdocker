@@ -22,6 +22,7 @@ jobs:
           docker version
           docker buildx version
           cd /cache && df -h .
+          ls -lta /cache
 
       - uses: actions/checkout@v3
 
