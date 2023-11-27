@@ -16,15 +16,14 @@ jobs:
           cat ~/.docker/config.json
           uname -a
           ls -lta /
+          ls -lta /cache
 
-      - uses: actions/checkout@v3
-
-      - name: Build and push
-        uses: docker/build-push-action@v4
+      - uses: namespacelabs/nscloud-checkout-action@v1
         with:
-          context: .
-          push: true
-          tags: nscr.io/01gr1g2rpb7ahzddy3f227exq9/testdocker:latest
+          fetch-depth: 10
+
+      - run: |
+          time docker pull ubuntu
   ci-gh-runner:
     runs-on: ubuntu-latest
     steps:
