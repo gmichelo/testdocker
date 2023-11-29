@@ -5,9 +5,9 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.04-amd64-2x8
+      - nscloud-ubuntu-22.04-amd64-2x8-with-cache
       - nscloud-cache-tag-canary
-      - nscloud-cache-size-50gb
+      - nscloud-cache-size-10gb
       - nscloud-exp-container-image-cache
       - nscloud-exp-runner-tool-cache-5gb
       - nscloud-git-mirror-5gb
