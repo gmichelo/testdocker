@@ -5,8 +5,8 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.04-amd64-2x4
-      - namespace-profile-test
+      - namespace
+      - namespace-profile-default
     steps:
       - name: Env checks
         run: |
