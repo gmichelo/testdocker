@@ -6,7 +6,6 @@ jobs:
   ci:
     runs-on: 
       - namespace
-      - namespace-profile-default
     steps:
       - name: Env checks
         run: |
