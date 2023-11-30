@@ -5,12 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.04-amd64-2x8
-      - nscloud-cache-tag-canary
-      - nscloud-cache-size-10gb
-      - nscloud-exp-container-image-cache
-      - nscloud-exp-runner-tool-cache-5gb
-      - nscloud-git-mirror-5gb
+      - nscloud-ubuntu-22.04-amd64-2x5
     steps:
       - name: Env checks
         run: |
