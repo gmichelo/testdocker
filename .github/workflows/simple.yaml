@@ -5,7 +5,8 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.05-amd64-2x4
+      - nscloud-ubuntu-22.04-amd64-2x4
+      - nscloud
     steps:
       - name: Env checks
         run: |
