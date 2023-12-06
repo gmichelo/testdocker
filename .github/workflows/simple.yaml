@@ -18,6 +18,9 @@ jobs:
       #     ls -lta /
       #     ls -lta /cache
 
+      - run:
+          psql --version
+          
       - uses: namespacelabs/nscloud-checkout-action@v1
         with:
           fetch-depth: 10
@@ -29,9 +32,6 @@ jobs:
       
       - run: |
           time docker pull ubuntu
-
-      - run:
-          psql --version
   ci-gh-runner:
     runs-on: ubuntu-latest
     steps:
