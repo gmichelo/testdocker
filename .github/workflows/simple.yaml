@@ -7,16 +7,16 @@ jobs:
     runs-on: 
       - namespace-profile-test
     steps:
-      - name: Env checks
-        run: |
-          ulimit -a
-          aws --version
-          docker buildx ls 
-          env
-          cat ~/.docker/config.json
-          uname -a
-          ls -lta /
-          ls -lta /cache
+      # - name: Env checks
+      #   run: |
+      #     ulimit -a
+      #     aws --version
+      #     docker buildx ls 
+      #     env
+      #     cat ~/.docker/config.json
+      #     uname -a
+      #     ls -lta /
+      #     ls -lta /cache
 
       - uses: namespacelabs/nscloud-checkout-action@v1
         with:
