@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - namespace
+      - namespace-profile-test
     steps:
       - name: Env checks
         run: |
@@ -29,6 +29,9 @@ jobs:
       
       - run: |
           time docker pull ubuntu
+
+      - run:
+          psql --version
   ci-gh-runner:
     runs-on: ubuntu-latest
     steps:
