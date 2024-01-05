@@ -5,21 +5,21 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - namespace-profile-test
+      - nscloud-ubuntu-20.04-amd64-2x8
     steps:
-      # - name: Env checks
-      #   run: |
-      #     ulimit -a
-      #     aws --version
-      #     docker buildx ls 
-      #     env
-      #     cat ~/.docker/config.json
-      #     uname -a
-      #     ls -lta /
-      #     ls -lta /cache
+      - name: Env checks
+        run: |
+          ulimit -a
+          aws --version
+          docker buildx ls 
+          env
+          cat ~/.docker/config.json
+          uname -a
+          ls -lta /
+          ls -lta /cache
 
-      - run:
-          psql --version
+      # - run:
+      #     psql --version
           
       - uses: namespacelabs/nscloud-checkout-action@v1
         with:
