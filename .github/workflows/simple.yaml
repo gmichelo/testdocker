@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-20.04-amd64-2x8
+      - nscloud-ubuntu-20.04-vanta-amd64-2x8
     steps:
       - name: run time
         run: |
