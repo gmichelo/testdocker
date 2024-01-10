@@ -5,7 +5,11 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-20.04-vanta-amd64-2x8-with-cache
+      - nscloud-ubuntu-22.04-arm64-4x16-with-cache
+      -	nscloud-cache-tag-cache-go
+			-	nscloud-cache-size-100gb
+			-	nscloud-cache-allow-commit-from-main
+			-	nscloud-cache-allow-commit-from-default
     steps:
       - name: run time
         run: |
