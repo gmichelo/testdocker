@@ -5,12 +5,18 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.04-amd64-4x16-with-cache
+      - nscloud-ubuntu-22.04-staging-amd64-4x16-with-cache
       - nscloud-cache-tag-cache-go
       - nscloud-cache-size-100gb
       - nscloud-cache-allow-commit-from-main
       - nscloud-cache-allow-commit-from-default
     steps:
+      - uses: actions/checkout@v3
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+      
       - name: run time
         run: |
           time
