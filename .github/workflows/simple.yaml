@@ -20,6 +20,7 @@ jobs:
           time
       - name: Env checks
         run: |
+          nsc version
           ps aux
           ulimit -a
           aws --version
