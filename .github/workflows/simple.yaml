@@ -20,6 +20,7 @@ jobs:
           time
       - name: Env checks
         run: |
+          ps aux
           ulimit -a
           aws --version
           docker buildx ls 
