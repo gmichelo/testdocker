@@ -5,8 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.04-staging-amd64-4x16-with-features
-      - nscloud-exp-features:use-next-nsc;annotate-build
+      - nscloud-ubuntu-22.04-staging-amd64-4x16
     steps:
       - uses: actions/checkout@v3
       - name: Build and push
