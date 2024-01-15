@@ -6,7 +6,7 @@ jobs:
   ci:
     runs-on: 
       - nscloud-ubuntu-22.04-amd64-4x16-with-features
-      - nscloud-exp-features:test,another-test,f1,f2
+      - nscloud-exp-features:test;another-test;f1;f2
     steps:
       - uses: actions/checkout@v3
       - name: Build and push
