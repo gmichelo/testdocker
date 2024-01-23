@@ -17,7 +17,7 @@ jobs:
         run: |
           time
 
-      - run:
+      - run: |
           cat $GITHUB_ENV
           echo ${{ env.NSC_CONTAINER_REGISTRY }}
       - name: Env checks
