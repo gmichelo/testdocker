@@ -29,8 +29,8 @@ jobs:
           ls -lta /
           ls -lta /cache
 
-      # - run:
-      #     psql --version
+      - run:
+          cat $GITHUB_ENV
           
       - uses: namespacelabs/nscloud-checkout-action@v1
         with:
