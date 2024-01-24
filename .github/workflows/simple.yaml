@@ -8,6 +8,8 @@ jobs:
       - nscloud-ubuntu-22.04-staging-amd64-4x16
     steps:
       - uses: actions/checkout@v3
+      - run: |
+          docker run ubuntu /bin/sh -c 'sleep 1000'
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
