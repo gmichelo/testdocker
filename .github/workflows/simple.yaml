@@ -8,8 +8,8 @@ jobs:
       - namespace-profile-gmichelo
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          docker run ubuntu /bin/sh -c 'sleep 1000'
+      # - run: |
+      #     docker run ubuntu /bin/sh -c 'sleep 1000'
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
