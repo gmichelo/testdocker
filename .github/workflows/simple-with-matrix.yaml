@@ -11,6 +11,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     concurrency:
       group: test
+      cancel-in-progress: false
     steps:
       - name: Env checks
         env:
