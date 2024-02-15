@@ -18,6 +18,12 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
+      - name: Breakpoint if tests failed
+        if: failure()
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 30m
+          authorized-users: gmichelo
 
       - run: |
           cat $GITHUB_ENV
