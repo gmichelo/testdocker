@@ -10,6 +10,7 @@ jobs:
       - nscloud-exp-container-image-cache
       - nscloud-cache-size-100gb
       - nscloud-cache-tag-in-runner-buildkit
+      - nscloud-exp-features:use-next-nsc
     steps:
       - uses: actions/checkout@v3
       - run: docker buildx ls 
