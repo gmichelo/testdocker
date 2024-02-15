@@ -17,10 +17,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-      
-      - name: run time
-        run: |
-          time
 
       - run: |
           cat $GITHUB_ENV
