@@ -5,11 +5,14 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - namespace-profile-gmichelo1
+      - nscloud-ubuntu-22.04-amd64-4x16-with-cache-with-builders
+      - nscloud-exp-in-runner-builder
+      - nscloud-exp-container-image-cache
+      - nscloud-cache-size-100gb
+      - nscloud-cache-tag-in-runner-buildkit
     steps:
       - uses: actions/checkout@v3
-      # - run: |
-      #     docker run ubuntu /bin/sh -c 'sleep 1000'
+      - run: docker buildx ls 
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
