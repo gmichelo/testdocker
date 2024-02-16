@@ -6,16 +6,9 @@ jobs:
   ci:
     runs-on: 
       - nscloud-ubuntu-22.04-amd64-4x16-with-cache
-      - nscloud-cache-size-100gb
       - nscloud-exp-runner-tool-cache-20gb
     steps:
       - uses: actions/checkout@v3
-      - run: docker buildx ls 
-      - name: Build and push
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          platforms: linux/amd64,linux/arm64
 
       - run: |
           cat $GITHUB_ENV
