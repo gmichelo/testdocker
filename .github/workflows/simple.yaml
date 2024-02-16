@@ -5,12 +5,12 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.04-staging-amd64-4x16-with-cache-with-builders
+      - nscloud-ubuntu-22.04-amd64-4x16-with-cache-with-builders
       - nscloud-exp-in-runner-builder
       - nscloud-exp-container-image-cache
       - nscloud-cache-size-100gb
       - nscloud-cache-tag-in-runner-buildkit
-      - nscloud-exp-features:use-next-nsc
+      - nscloud-exp-runner-tool-cache-20gb
     steps:
       - uses: actions/checkout@v3
       - run: docker buildx ls 
@@ -19,37 +19,34 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
-          
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        with:
-          duration: 30m
-          authorized-users: gmichelo
 
       - run: |
           cat $GITHUB_ENV
           echo ${{ env.NSC_CONTAINER_REGISTRY }}
-      - name: Env checks
-        run: |
-          nsc version
-          ps aux
-          ulimit -a
-          aws --version
-          docker buildx ls 
-          env
-          cat ~/.docker/config.json
-          uname -a
-          ls -lta /
-          ls -lta /cache
-          
-      - uses: namespacelabs/nscloud-checkout-action@v1
-        with:
-          fetch-depth: 10
+      # - name: Env checks
+      #   run: |
+      #     nsc version
+      #     ps aux
+      #     ulimit -a
+      #     aws --version
+      #     docker buildx ls 
+      #     env
+      #     cat ~/.docker/config.json
+      #     uname -a
+      #     ls -lta /
+      #     ls -lta /cache
 
-      - uses: actions/setup-go@v4
+      - uses: actions/setup-node@v4
         with:
-          go-version: '^1.21.1'
+          node-version: 18
 
+      - run: pip install pre-commit
+
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 30m
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
       
       - run: |
           time docker pull ubuntu
