@@ -26,6 +26,8 @@ jobs:
       #     ls -lta /
       #     ls -lta /cache
 
+      - run: ls -lta /usr/lib/jvm
+
       - uses: actions/setup-node@v4
         with:
           node-version: 18
