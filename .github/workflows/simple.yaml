@@ -5,8 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.04-amd64-4x16-with-cache
-      - nscloud-exp-runner-tool-cache-20gb
+      - nscloud-ubuntu-22.04-staging-amd64-4x16
     steps:
       - uses: actions/checkout@v3
 
@@ -27,6 +26,7 @@ jobs:
       #     ls -lta /cache
 
       - run: ls -lta /usr/lib/jvm
+      - run: env
 
       - uses: actions/setup-node@v4
         with:
