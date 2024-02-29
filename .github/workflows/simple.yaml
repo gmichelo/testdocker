@@ -49,7 +49,7 @@ jobs:
       - run: |
           time docker pull ubuntu
   ci-gh-runner:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Env checks
         run: |
@@ -59,3 +59,11 @@ jobs:
           env
           cat ~/.docker/config.json
           uname -a
+
+      - run: ls /usr/share/dotnet/sdk
+      - run: dpkg -S dotnet
+
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x 
+          cache: false
