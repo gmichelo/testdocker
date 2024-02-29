@@ -28,6 +28,11 @@ jobs:
       - run: ls -lta /usr/lib/jvm
       - run: env
       - run: ant -version
+      # Test dotnet installer (proinc)
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x 
+          cache: false
 
       - uses: actions/setup-node@v4
         with:
