@@ -26,6 +26,7 @@ jobs:
       #     ls -lta /cache
 
       - run: ls -lta /usr/lib/jvm
+      - run: ls -lta /home/runner
       - run: env
       - run: terraform version
       - run: ant -version
