@@ -12,6 +12,7 @@ jobs:
       - run: |
           cat $GITHUB_ENV
           echo ${{ env.NSC_CONTAINER_REGISTRY }}
+          exit 1
       # - name: Env checks
       #   run: |
       #     nsc version
