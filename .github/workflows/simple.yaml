@@ -10,7 +10,7 @@ jobs:
       - nscloud-cache-size-50gb
     steps:
       - uses: actions/checkout@v3
-      - run: ls -lta /cache && echo "test" > /cache/test
+      - run: ls -lta /cache && echo "test" > /cache/test && cat /cache/test
       - run: |
           cat $GITHUB_ENV
           echo ${{ env.NSC_CONTAINER_REGISTRY }}
