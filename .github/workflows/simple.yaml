@@ -5,14 +5,15 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-22.04-staging-amd64-4x16
+      - nscloud-ubuntu-22.04-staging-amd64-4x16-with-cache
+      - nscloud-cache-tag-test
+      - nscloud-cache-size-50gb
     steps:
       - uses: actions/checkout@v3
-
+      - run: ls -lta /cache && echo "test" > /cache/test
       - run: |
           cat $GITHUB_ENV
           echo ${{ env.NSC_CONTAINER_REGISTRY }}
-          exit 1
       # - name: Env checks
       #   run: |
       #     nsc version
@@ -43,11 +44,12 @@ jobs:
 
       - run: pip install pre-commit
 
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        with:
-          duration: 30m
-          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
+
+      # - name: Breakpoint if tests failed
+      #   uses: namespacelabs/breakpoint-action@v0
+      #   with:
+      #     duration: 30m
+      #     authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
       
       - run: |
           time docker pull ubuntu
