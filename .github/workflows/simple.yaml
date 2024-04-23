@@ -11,6 +11,7 @@ jobs:
       - nscloud-exp-features:job-conclusion-exit-code
     steps:
       - uses: actions/checkout@v3
+      - run: exit 1
       # - run: ls -lta /cache && echo "test" >> /cache/test && cat /cache/test
       # - run: exit 1
       # - run: |
