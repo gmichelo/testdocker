@@ -8,6 +8,7 @@ jobs:
       - nscloud-ubuntu-22.04-staging-amd64-4x16-with-cache
       - nscloud-cache-tag-test
       - nscloud-cache-size-50gb
+      - nscloud-exp-features:job-conclusion-exit-code
     steps:
       - uses: actions/checkout@v3
       # - run: ls -lta /cache && echo "test" >> /cache/test && cat /cache/test
