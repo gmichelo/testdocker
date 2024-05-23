@@ -4,7 +4,6 @@ name: simple-with-matrix
 
 jobs:
   ci:
-    needs: job1
     strategy:
       matrix:
         platform: [nscloud-ubuntu-22.04-amd64-2x4, nscloud-ubuntu-22.04-amd64-2x4, nscloud-ubuntu-22.04-amd64-2x4, nscloud-ubuntu-22.04-amd64-2x4]
