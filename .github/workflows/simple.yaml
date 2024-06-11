@@ -32,6 +32,9 @@ jobs:
       - run: ls -lta /usr/lib/jvm
       - run: ls -lta /home/runner
       - run: env
+      - run: which gcloud
+      - run: gcloud version
+      - run: cmake --version
       - run: terraform version
       - run: ant -version
       # Test dotnet installer (proinc)
