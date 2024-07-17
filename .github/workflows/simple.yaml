@@ -37,6 +37,7 @@ jobs:
       - run: cmake --version
       - run: terraform version
       - run: ant -version
+      - run: yarn version
       # Test dotnet installer (proinc)
       - uses: actions/setup-dotnet@v3
         with:
@@ -72,6 +73,7 @@ jobs:
 
       - run: ls /usr/share/dotnet/sdk
       - run: dpkg -S dotnet
+      - run: yarn version
 
       - uses: actions/setup-dotnet@v3
         with:
