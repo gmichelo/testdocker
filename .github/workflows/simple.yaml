@@ -70,6 +70,12 @@ jobs:
           cat ~/.docker/config.json
           uname -a
 
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 30m
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
+
       - run: ls /usr/share/dotnet/sdk
       - run: dpkg -S dotnet
       - run: yarn version
