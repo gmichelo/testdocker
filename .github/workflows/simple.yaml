@@ -29,6 +29,12 @@ jobs:
       #     ls -lta /
       #     ls -lta /cache
 
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 30m
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
+
       - run: ls -lta /usr/lib/jvm
       - run: ls -lta /home/runner
       - run: env
@@ -49,13 +55,6 @@ jobs:
           node-version: 18
 
       - run: pip install pre-commit
-
-
-      # - name: Breakpoint if tests failed
-      #   uses: namespacelabs/breakpoint-action@v0
-      #   with:
-      #     duration: 30m
-      #     authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
       
       - run: |
           time docker pull ubuntu
