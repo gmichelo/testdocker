@@ -6,7 +6,7 @@ jobs:
   on-nscloud:
     runs-on: nscloud
     container:
-      image: debian:bullseye
+      image: semgrep/semgrep@sha256:e792d418d128c4c7ea3842677192b7a06458747fbdbeda350a5cd2c7abbb7bbe
     steps:
       - name: checkout
         uses: actions/checkout@v3
