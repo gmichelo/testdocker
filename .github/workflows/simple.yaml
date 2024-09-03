@@ -6,7 +6,7 @@ jobs:
   ci:
     runs-on: 
       - namespace-profile-default
-      - namespace-experiments:dns.resolver=local
+      - namespace-experiments:use-next-nsc
     steps:
       - uses: actions/checkout@v3
       # - run: ls -lta /cache && echo "test" >> /cache/test && cat /cache/test
@@ -31,7 +31,7 @@ jobs:
         uses: namespacelabs/breakpoint-action@v0
         with:
           duration: 30m
-          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,pavolmarko
 
       - run: ls -lta /usr/lib/jvm
       - run: ls -lta /home/runner
