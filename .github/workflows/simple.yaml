@@ -5,8 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - namespace-profile-default
-      - namespace-experiments:use-next-nsc
+      - nscloud-macos-sonoma-arm64-4x7
     steps:
       - uses: actions/checkout@v3
       # - run: ls -lta /cache && echo "test" >> /cache/test && cat /cache/test
