@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-macos-sonoma-arm64-4x7
+      - nscloud
     steps:
       - uses: actions/checkout@v3
       # - run: ls -lta /cache && echo "test" >> /cache/test && cat /cache/test
@@ -25,6 +25,8 @@ jobs:
       #     uname -a
       #     ls -lta /
       #     ls -lta /cache
+
+      - run: docker buildx build . 
 
       - name: Breakpoint if tests failed
         uses: namespacelabs/breakpoint-action@v0
