@@ -6,6 +6,8 @@ jobs:
   ci:
     runs-on: 
       - nscloud
+    environment:
+      name: Test
     steps:
       - uses: actions/checkout@v3
       # - run: ls -lta /cache && echo "test" >> /cache/test && cat /cache/test
