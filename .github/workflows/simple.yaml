@@ -5,8 +5,13 @@ name: simple
 jobs:
   ci:
     runs-on:
-      - nscloud-macos-sonoma-arm64-4x7
+      - nscloud-ubuntu-24.04
     steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12' 
+      - run: python --version
+      - run: pip --version
       - name: Env checks
         run: |
           # ulimit -a
