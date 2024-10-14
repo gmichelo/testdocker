@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on: 
-      - nscloud-ubuntu-20.04-amd64-32x16
+      - nscloud-macos-sequoia-arm64-4x7
     environment:
       name: Test
     steps:
