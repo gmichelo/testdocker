@@ -6,6 +6,8 @@ jobs:
   ci:
     runs-on:
       - namespace-profile-macos
+    environment:
+      name: Test
     steps:
       - uses: actions/setup-python@v5
         with:
