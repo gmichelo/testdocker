@@ -111,6 +111,7 @@ jobs:
       - run: which helm
       - run: getent passwd
       - run: getent group
+      - run: cat /etc/resolv.conf
       - name: Env checks
         run: |
           docker buildx ls 
