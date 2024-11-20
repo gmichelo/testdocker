@@ -1,4 +1,7 @@
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: "25,55 * * * *" # Every 30m
 
 name: build-perf-experiment
 
