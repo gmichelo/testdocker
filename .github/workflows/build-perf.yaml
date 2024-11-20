@@ -1,6 +1,6 @@
 on: [workflow_dispatch]
 
-name: simple
+name: build-perf-experiment
 
 jobs:
   ci:
