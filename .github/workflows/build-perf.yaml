@@ -1,0 +1,14 @@
+on: [workflow_dispatch]
+
+name: simple
+
+jobs:
+  ci:
+    runs-on:
+      - namespace-profile-default
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          dd if=/dev/urandom of=perf_experiment/bigfile bs=1M count=2048 status=progress
+      - run: |
+          docker buildx build ./perf_experiment
