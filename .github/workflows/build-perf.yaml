@@ -11,4 +11,8 @@ jobs:
       - run: |
           dd if=/dev/urandom of=perf_experiment/bigfile bs=1M count=2048 status=progress
       - run: |
-          docker buildx build ./perf_experiment
+          docker buildx build 
+            --platform linux/amd64 \
+            -t ${{ env.NSC_CONTAINER_REGISTRY }}/image:amd64 \
+            --push \
+            ./perf_experiment
