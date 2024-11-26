@@ -2,11 +2,11 @@ on: [workflow_dispatch]
 
 name: simple-with-matrix
 
-concurrency: ci-${{ github.ref }}
-
 jobs:
   ci:
     strategy:
+      max-parallel: 1 
+      fail-fast: false 
       matrix:
         platform: [namespace-profile-default]
         dummy_env: [dummy1, dummy2, dummy3, dummy4, dummy5, dummy6, dummy7, dummy8, dummy9, dummy10, dummy11, dummy12]
