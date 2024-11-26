@@ -2,9 +2,10 @@ on: [workflow_dispatch]
 
 name: simple
 
+concurrency: ci-${{ github.ref }}
+
 jobs:
   ci:
-    concurrency: test
     runs-on:
       - namespace-profile-macos
     # environment:
