@@ -3,7 +3,7 @@ on:
   schedule:
     - cron: "25,55 * * * *" # Every 30m
 
-name: build-perf-experiment
+name: build-perf-load-experiment
 
 jobs:
   load-wo-cache:
