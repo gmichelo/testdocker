@@ -1,0 +1,32 @@
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: "25,55 * * * *" # Every 30m
+
+name: build-perf-experiment
+
+jobs:
+  load-wo-cache:
+    runs-on:
+      - namespace-profile-default
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          dd if=/dev/urandom of=perf_experiment/bigfile bs=1M count=2048 status=progress
+      - run: |
+          docker buildx build \
+            --platform linux/amd64 \
+            --load \
+            ./perf_experiment
+  load-w-cache:
+    runs-on:
+      - namespace-profile-containerdcache
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          dd if=/dev/urandom of=perf_experiment/bigfile bs=1M count=2048 status=progress
+      - run: |
+          docker buildx build \
+            --platform linux/amd64 \
+            --load \
+            ./perf_experiment
