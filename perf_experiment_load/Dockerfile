@@ -24,3 +24,5 @@ RUN apt-get update -y \
     parallel \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/*
+
+COPY ./bigfile . 

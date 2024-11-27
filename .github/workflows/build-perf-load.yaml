@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
+          dd if=/dev/zero of=perf_experiment_load/bigfile bs=1M count=2048 status=progress
+      - run: |
           docker buildx build \
             --platform linux/amd64 \
             --load \
@@ -21,6 +23,8 @@ jobs:
       - namespace-profile-containerdcache
     steps:
       - uses: actions/checkout@v4
+      - run: |
+          dd if=/dev/zero of=perf_experiment_load/bigfile bs=1M count=2048 status=progress
       - run: |
           docker buildx build \
             --platform linux/amd64 \
