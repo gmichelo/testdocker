@@ -7,7 +7,7 @@ concurrency: ci-${{ github.ref }}
 jobs:
   ci:
     runs-on:
-      - namespace-profile-macos
+      - namespace-profile-test-custom-image
     # environment:
     #   name: Test
     steps:
