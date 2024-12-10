@@ -6,6 +6,7 @@ jobs:
   ci:
     runs-on: 
       - namespace-profile-test-sequoia
+      - nscloud-exp-features:critical
     # environment:
     #   name: Test
     steps:
