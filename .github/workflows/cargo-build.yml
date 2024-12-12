@@ -23,6 +23,24 @@ jobs:
         with:
           duration: 30m
           authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
+  with-cache:
+    runs-on:
+      - nscloud-ubuntu-20.04-staging-amd64-4x16-with-cache
+      - nscloud-cache-tag-test
+      - nscloud-cache-size-50gb
+    steps:.
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        with:
+          repository: chainflip-io/chainflip-backend
+      - name: Set up Rust cache
+        uses: namespacelabs/nscloud-cache-action@v1
+        with:
+          cache: rust
+      - name: Breakpoint on failure
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 30m
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
 
   gh-runner:
     runs-on:
