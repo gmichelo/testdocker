@@ -25,7 +25,7 @@ jobs:
           authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo
   with-cache:
     runs-on:
-      - nscloud-ubuntu-20.04-staging-amd64-4x16-with-cache
+      - nscloud-ubuntu-22.04-amd64-4x16-with-cache
       - nscloud-cache-tag-test
       - nscloud-cache-size-50gb
     steps:
