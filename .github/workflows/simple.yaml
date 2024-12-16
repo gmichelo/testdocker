@@ -7,7 +7,8 @@ concurrency: ci-${{ github.ref }}
 jobs:
   ci:
     runs-on:
-      - namespace-profile-test-custom-image
+      - namespace-profile-default
+      - namespace-experiments:github.run-id=${{ github.run_id }};github.run-attempt=${{ github.run_attempt }}
     # environment:
     #   name: Test
     steps:
