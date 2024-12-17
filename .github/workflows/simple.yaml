@@ -17,6 +17,12 @@ jobs:
           python-version: '3.12' 
       - run: python --version
       - run: pip --version
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        if: always()
+        with:
+          duration: 1h
+          authorized-users: gmichelo 
       - name: Env checks
         run: |
           # ulimit -a
