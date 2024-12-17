@@ -2,8 +2,6 @@ on: [workflow_dispatch]
 
 name: simple
 
-concurrency: ci-${{ github.ref }}
-
 jobs:
   ci:
     runs-on:
