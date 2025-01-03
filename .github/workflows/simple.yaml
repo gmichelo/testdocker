@@ -6,7 +6,7 @@ jobs:
   ci:
     runs-on: 
       - namespace-profile-with-caching
-      - nscloud-exp-features:critical
+      - nscloud-exp-features:critical,github.mounted-scripts
     # environment:
     #   name: Test
     steps:
