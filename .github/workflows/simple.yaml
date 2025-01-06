@@ -119,6 +119,12 @@ jobs:
       - run: getent passwd
       - run: getent group
       - run: cat /etc/resolv.conf
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        if: always()
+        with:
+          duration: 1h
+          authorized-users: gmichelo 
       - name: Env checks
         run: |
           docker buildx ls 
