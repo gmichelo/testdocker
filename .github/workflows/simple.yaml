@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on:
-      - namespace-profile-default
+      - nscloud-ubuntu-24.04	
       - namespace-experiments:github.run-id=${{ github.run_id }};github.run-attempt=${{ github.run_attempt }};use-node=ext-fsn1-dc19-2402631
     # environment:
     #   name: Test
