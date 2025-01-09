@@ -6,7 +6,7 @@ jobs:
   ci:
     runs-on:
       - namespace-profile-default
-      - namespace-experiments:github.run-id=${{ github.run_id }};github.run-attempt=${{ github.run_attempt }}
+      - namespace-experiments:github.run-id=${{ github.run_id }};github.run-attempt=${{ github.run_attempt }};use-node=ext-fsn1-dc19-2402631
     # environment:
     #   name: Test
     steps:
