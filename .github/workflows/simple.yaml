@@ -38,23 +38,29 @@ jobs:
           
           # cd /cache && df -h .
           # node -v
-      - name: Test checkout of another private repository
-        uses: namespacelabs/nscloud-checkout-action@HEAD
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          repository: gmichelo-dev/runner-tool-cache
-          token: ${{ secrets.CHECKOUT_PAT }} # `GH_PAT` is a secret that contains your PAT
-          path: tools
-          submodules: recursive
-          persist-credentials: true
+          repository: ghostty-org/ghostty
 
-      - name: Test checkout of another private repository
-        uses: namespacelabs/nscloud-checkout-action@HEAD
-        with:
-          repository: gmichelo-dev/test-private
-          token: ${{ secrets.CHECKOUT_PAT }} # `GH_PAT` is a secret that contains your PAT
-          path: test-private
-          submodules: recursive
-          persist-credentials: true
+      - uses: snapcore/action-build@v1
+      # - name: Test checkout of another private repository
+      #   uses: namespacelabs/nscloud-checkout-action@HEAD
+      #   with:
+      #     repository: gmichelo-dev/runner-tool-cache
+      #     token: ${{ secrets.CHECKOUT_PAT }} # `GH_PAT` is a secret that contains your PAT
+      #     path: tools
+      #     submodules: recursive
+      #     persist-credentials: true
+
+      # - name: Test checkout of another private repository
+      #   uses: namespacelabs/nscloud-checkout-action@HEAD
+      #   with:
+      #     repository: gmichelo-dev/test-private
+      #     token: ${{ secrets.CHECKOUT_PAT }} # `GH_PAT` is a secret that contains your PAT
+      #     path: test-private
+      #     submodules: recursive
+      #     persist-credentials: true
 
       - name: Breakpoint if tests failed
         uses: namespacelabs/breakpoint-action@v0
