@@ -20,7 +20,7 @@ jobs:
         if: always()
         with:
           duration: 1h
-          authorized-users: gmichelo 
+          authorized-users: gmichelo, hugosantos
       - name: Env checks
         run: |
           # ulimit -a
