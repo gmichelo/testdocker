@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on:
-      - namespace-profile-testing-cache1
+      - namespace-profile-default
     steps:
       - name: Env checks
         run: |
@@ -38,11 +38,11 @@ jobs:
           path: |
             .ci_cache/cache
 
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        with:
-          duration: 1h
-          authorized-users: gmichelo,edganiukov,hugosantos
+      # - name: Breakpoint if tests failed
+      #   uses: namespacelabs/breakpoint-action@v0
+      #   with:
+      #     duration: 1h
+      #     authorized-users: gmichelo,edganiukov,hugosantos
 
       - run: |
           ls $(pwd)
