@@ -11,12 +11,12 @@ jobs:
     # environment:
     #   name: Test
     steps:
-     - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          repository: ghostty-org/ghostty
-
-      - uses: snapcore/action-build@v1
+       - name: Checkout
+          uses: actions/checkout@v4
+          with:
+            repository: ghostty-org/ghostty
+  
+        - uses: snapcore/action-build@v1
   ci:
     runs-on: 
       # - namespace-profile-with-caching
