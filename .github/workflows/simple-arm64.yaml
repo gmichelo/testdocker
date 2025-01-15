@@ -4,6 +4,9 @@ name: simple-arm64
 
 jobs:
   ci:
+    strategy:
+      matrix:
+        dummy_env: [dummy1, dummy2, dummy3, dummy4, dummy5]
     runs-on: self-hosted
     steps:
       - name: Env checks
@@ -15,8 +18,6 @@ jobs:
           cat ~/.docker/config.json
 
       - uses: actions/checkout@v3
-
-      - run: sleep 1000
 
       - name: Build and push
         uses: docker/build-push-action@v4
