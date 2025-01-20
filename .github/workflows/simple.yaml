@@ -54,6 +54,13 @@ jobs:
         with:
           repository: ghostty-org/ghostty
 
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        if: always()
+        with:
+          duration: 1h
+          authorized-users: gmichelo,hugosantos
+
       - uses: snapcore/action-build@v1
       # - name: Test checkout of another private repository
       #   uses: namespacelabs/nscloud-checkout-action@HEAD
@@ -72,13 +79,6 @@ jobs:
       #     path: test-private
       #     submodules: recursive
       #     persist-credentials: true
-
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        if: always()
-        with:
-          duration: 1h
-          authorized-users: gmichelo,hugosantos
     
       - run: pwd
       - run: getent passwd
