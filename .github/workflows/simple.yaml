@@ -5,11 +5,11 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      - namespace-profile-with-caching
-      - nscloud-exp-features:container.fix_fuse_perms
+      # - namespace-profile-with-caching
+      # - nscloud-exp-features:container.fix_fuse_perms
       # - nscloud-exp-features:critical;github.mounted-scripts
       
-      # - nscloud-ubuntu-24.04-amd64-4x16
+      - nscloud-ubuntu-24.04-amd64-4x16
     # environment:
     #   name: Test
     steps:
