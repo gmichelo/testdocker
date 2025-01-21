@@ -6,7 +6,7 @@ jobs:
   ci:
     strategy:
       matrix:
-        dummy_env: [dummy1, dummy2, dummy3, dummy4, dummy5]
+        dummy_env: [dummy1]
     runs-on: custom-1
     steps:
       - name: Env checks
