@@ -1,0 +1,57 @@
+on: [workflow_dispatch]
+
+name: ghostty-build
+
+jobs:
+  namespace-arm64:
+    runs-on:
+      - nscloud-ubuntu-24.04-systemd-arm64-4x16
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: kenvandine/ghostty
+          ref: 44211417284acdfaf8a9ca921a2241a6cb936a41
+      - uses: snapcore/action-build@v1
+      
+      - name: Breakpoint
+        if: failure()
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 15m
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,pavolmarko
+
+  github-amd64:
+    runs-on:
+      - ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: kenvandine/ghostty
+          ref: 44211417284acdfaf8a9ca921a2241a6cb936a41
+      - uses: snapcore/action-build@v1
+      
+      - name: Breakpoint
+        if: failure()
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 15m
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,pavolmarko
+
+  namespace-amd64:
+    runs-on:
+      - nscloud-ubuntu-24.04-systemd-amd64-4x16
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: kenvandine/ghostty
+          ref: 44211417284acdfaf8a9ca921a2241a6cb936a41
+      - uses: snapcore/action-build@v1
+      - name: Breakpoint
+        if: failure()
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 15m
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,pavolmarko
