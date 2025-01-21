@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         dummy_env: [dummy1]
-    runs-on: custom-1
+    runs-on: self-hosted
     steps:
       - name: Env checks
         run: |
