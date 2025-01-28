@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci:
     runs-on:
-      - namespace-profile-default
+      - namespace-profile-macos
     steps:
       - name: Env checks
         run: |
