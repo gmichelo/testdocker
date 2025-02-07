@@ -1,5 +1,3 @@
 services:
-  proxy:
-    image: nginx
-    ports:
-      - 80:80
+  go:
+    image: golang@sha256:927112936d6b496ed95f55f362cc09da6e3e624ef868814c56d55bd7323e0959
