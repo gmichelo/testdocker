@@ -1,3 +1,7 @@
 services:
+  ubuntu:
+    image: ubuntu@sha256:72297848456d5d37d1262630108ab308d3e9ec7ed1c3286a32fe09856619a782
+  nginx:
+    image: nginx@sha256:11bd37f277adec37e7a9366dfeb80ee2d00026089cbb61edb79dd111dba49c18
   go:
     image: golang@sha256:927112936d6b496ed95f55f362cc09da6e3e624ef868814c56d55bd7323e0959
