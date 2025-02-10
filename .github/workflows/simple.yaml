@@ -5,7 +5,8 @@ name: simple
 jobs:
   ci-1:
     runs-on:
-      - namespace-profile-containerdcache
+      - namespace-profile-default
+      - nscloud-exp-features:use-node=ext-fsn1-dc20-2374834
     # environment:
     #   name: Test
     steps:
