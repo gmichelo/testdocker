@@ -6,7 +6,7 @@ jobs:
   ci-1:
     runs-on:
       - namespace-profile-default
-      - nscloud-exp-features:use-node=ext-fsn1-dc20-2374834
+      # - nscloud-exp-features:use-node=ext-fsn1-dc20-2374834
     # environment:
     #   name: Test
     steps:
@@ -21,6 +21,11 @@ jobs:
     # environment:
     #   name: Test
     steps:
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 1h
+          authorized-users: gmichelo 
       # - uses: actions/setup-python@v5
       #   with:
       #     python-version: '3.12' 
