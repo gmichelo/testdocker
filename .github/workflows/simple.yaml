@@ -24,6 +24,9 @@ jobs:
     # environment:
     #   name: Test
     steps:
+      - run: |
+          echo "pwd: $(pwd)"
+          env
       - name: Breakpoint if tests failed
         uses: namespacelabs/breakpoint-action@v0
         with:
