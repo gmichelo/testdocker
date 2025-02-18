@@ -15,6 +15,9 @@ jobs:
       - name: Build the docker-compose stack
         run: docker-compose -f docker-compose.yml up -d
   ci:
+    defaults:
+      run:
+        working-directory: test/wd
     runs-on:
       - nscloud-ubuntu-24.04-amd64-4x16
       - namespace-experiments:github.run-id=${{ github.run_id }};github.run-attempt=${{ github.run_attempt }};container.fix_fuse_perms
