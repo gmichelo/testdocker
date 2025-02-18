@@ -2,6 +2,9 @@ on: [workflow_dispatch]
 
 name: simple
 
+env:
+  WORKING_DIR: my/dir
+
 jobs:
   ci-1:
     runs-on:
@@ -17,7 +20,7 @@ jobs:
   ci:
     defaults:
       run:
-        working-directory: perf_experiment
+        working-directory: ${{ env.WORKING_DIR }}
     runs-on:
       # - nscloud-ubuntu-24.04-amd64-4x16
       # - namespace-experiments:github.run-id=${{ github.run_id }};github.run-attempt=${{ github.run_attempt }};container.fix_fuse_perms
@@ -33,9 +36,7 @@ jobs:
       - name: Set up Go cache
         uses: namespacelabs/nscloud-cache-action@4634f7d8dada6cf61d9e0de89e1262412372c92e
         with:
-          path: |
-            ./go-build
-            ./pkg/mod
+          path: ${{ env.WORKING_DIR }}
       # - name: Breakpoint if tests failed
       #   uses: namespacelabs/breakpoint-action@v0
       #   with:
