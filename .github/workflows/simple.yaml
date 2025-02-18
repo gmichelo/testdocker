@@ -35,7 +35,7 @@ jobs:
           const { stdout } = await exec.getExecOutput(`pwd`, [], {
             silent: !core.isDebug(),
           })
-          console.log(stdout.trim()0;
+          console.log(stdout.trim());
       - name: Breakpoint if tests failed
         uses: namespacelabs/breakpoint-action@v0
         with:
