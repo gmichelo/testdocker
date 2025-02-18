@@ -31,16 +31,16 @@ jobs:
           echo "pwd: $(pwd)"
           env
       - name: Set up Go cache
-        uses: namespacelabs/nscloud-cache-action@41b7649e29ac4e6d157260869c1b8ca5d2aeffdc
+        uses: namespacelabs/nscloud-cache-action@2b61307cea9358d710cf09d8d55e52454cfc80b7
         with:
           path: |
             ./go-build
             ./pkg/mod
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        with:
-          duration: 1h
-          authorized-users: gmichelo 
+      # - name: Breakpoint if tests failed
+      #   uses: namespacelabs/breakpoint-action@v0
+      #   with:
+      #     duration: 1h
+      #     authorized-users: gmichelo 
       # - uses: actions/setup-python@v5
       #   with:
       #     python-version: '3.12' 
@@ -74,12 +74,12 @@ jobs:
         with:
           repository: ghostty-org/ghostty
 
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        if: always()
-        with:
-          duration: 1h
-          authorized-users: gmichelo,hugosantos
+      # - name: Breakpoint if tests failed
+      #   uses: namespacelabs/breakpoint-action@v0
+      #   if: always()
+      #   with:
+      #     duration: 1h
+      #     authorized-users: gmichelo,hugosantos
 
       - uses: snapcore/action-build@v1
       # - name: Test checkout of another private repository
@@ -156,12 +156,12 @@ jobs:
       - run: getent passwd
       - run: getent group
       - run: cat /etc/resolv.conf
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        if: always()
-        with:
-          duration: 1h
-          authorized-users: gmichelo 
+      # - name: Breakpoint if tests failed
+      #   uses: namespacelabs/breakpoint-action@v0
+      #   if: always()
+      #   with:
+      #     duration: 1h
+      #     authorized-users: gmichelo 
       - name: Env checks
         run: |
           docker buildx ls 
@@ -192,9 +192,9 @@ jobs:
           submodules: recursive
           persist-credentials: true
 
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        with:
-          duration: 1h
-          authorized-users: gmichelo  
+      # - name: Breakpoint if tests failed
+      #   uses: namespacelabs/breakpoint-action@v0
+      #   with:
+      #     duration: 1h
+      #     authorized-users: gmichelo  
 
