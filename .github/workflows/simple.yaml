@@ -3,7 +3,7 @@ on: [workflow_dispatch]
 name: simple
 
 env:
-  WORKING_DIR: my/dir
+  WORKING_DIR: perf_experiment
 
 jobs:
   ci-1:
