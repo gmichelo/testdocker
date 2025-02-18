@@ -29,13 +29,12 @@ jobs:
       - run: |
           echo "pwd: $(pwd)"
           env
-      - name: env from typescript
-        run: |
-          import * as exec from "@actions/exec";
-          const { stdout } = await exec.getExecOutput(`pwd`, [], {
-            silent: !core.isDebug(),
-          })
-          console.log(stdout.trim());
+      - name: Set up Go cache
+        uses: namespacelabs/nscloud-cache-action@41b7649e29ac4e6d157260869c1b8ca5d2aeffdc
+        with:
+          path: |
+            ./go-build
+            ./pkg/mod
       - name: Breakpoint if tests failed
         uses: namespacelabs/breakpoint-action@v0
         with:
