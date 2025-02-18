@@ -36,7 +36,9 @@ jobs:
       - name: Set up Go cache
         uses: namespacelabs/nscloud-cache-action@4634f7d8dada6cf61d9e0de89e1262412372c92e
         with:
-          path: ${{ env.WORKING_DIR }}
+          path: |
+            ${{ env.WORKING_DIR }}/go-build
+            ${{ env.WORKING_DIR }}/pkg/mod
       # - name: Breakpoint if tests failed
       #   uses: namespacelabs/breakpoint-action@v0
       #   with:
