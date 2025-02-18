@@ -31,7 +31,7 @@ jobs:
           echo "pwd: $(pwd)"
           env
       - name: Set up Go cache
-        uses: namespacelabs/nscloud-cache-action@2b61307cea9358d710cf09d8d55e52454cfc80b7
+        uses: namespacelabs/nscloud-cache-action@4634f7d8dada6cf61d9e0de89e1262412372c92e
         with:
           path: |
             ./go-build
