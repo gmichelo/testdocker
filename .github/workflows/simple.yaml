@@ -17,7 +17,7 @@ jobs:
   ci:
     defaults:
       run:
-        working-directory: test/wd
+        working-directory: perf_experiment
     runs-on:
       - nscloud-ubuntu-24.04-amd64-4x16
       - namespace-experiments:github.run-id=${{ github.run_id }};github.run-attempt=${{ github.run_attempt }};container.fix_fuse_perms
