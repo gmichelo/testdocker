@@ -5,19 +5,18 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      # - namespace-profile-with-caching
-      # - nscloud-exp-features:container.fix_fuse_perms
-      # - nscloud-exp-features:critical;github.mounted-scripts
+      - namespace-profile-with-caching
+      - nscloud-exp-features:container.fix_fuse_perms
+      - nscloud-exp-features:critical;github.mounted-scripts
       
-      - nscloud-ubuntu-24.04-amd64-4x16
+      # - nscloud-ubuntu-24.04-amd64-4x16
     # environment:
     #   name: Test
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          repository: ghostty-org/ghostty
-      - uses: snapcore/action-build@v1
+      - run: |
+          env
   ci:
     runs-on: 
       # - namespace-profile-with-caching
