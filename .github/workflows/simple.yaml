@@ -8,15 +8,22 @@ env:
 jobs:
   ci-1:
     runs-on:
-      - namespace-profile-testing-cache
+      - nscloud-cache-size-50gb
+      - nscloud-cache-tag-builds
+      - nscloud-exp-runner-tool-cache-20gb
+      - nscloud-git-mirror-5gb
+      - nscloud-ubuntu-22.04-amd64-32x64-with-cache
       # - nscloud-exp-features:use-node=ext-fsn1-dc20-2374834
     # environment:
     #   name: Test
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build the docker-compose stack
-        run: docker-compose -f docker-compose.yml up -d
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 1h
+          authorized-users: gmichelo 
   ci:
     defaults:
       run:
