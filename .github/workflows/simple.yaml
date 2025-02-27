@@ -19,11 +19,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        with:
-          duration: 1h
-          authorized-users: gmichelo 
+        with: 
+          repository: cilium/ebpf
+      - uses: actions/setup-go@v5
+      - run: |
+          cd ebpf/examples/
+          go run -exec sudo ./kprobe
   ci:
     defaults:
       run:
