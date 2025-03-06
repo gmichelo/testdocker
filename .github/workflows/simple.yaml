@@ -12,7 +12,7 @@ jobs:
       - nscloud-cache-tag-builds
       - nscloud-exp-runner-tool-cache-20gb
       - nscloud-git-mirror-5gb
-      - nscloud-ubuntu-22.04-amd64-32x64-with-cache
+      - nscloud-ubuntu-20.04-amd64-32x64-with-cache
       # - nscloud-exp-features:use-node=ext-fsn1-dc20-2374834
     # environment:
     #   name: Test
