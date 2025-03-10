@@ -39,65 +39,20 @@ jobs:
     runs-on:
       # - nscloud-ubuntu-24.04-amd64-4x16
       # - namespace-experiments:github.run-id=${{ github.run_id }};github.run-attempt=${{ github.run_attempt }};container.fix_fuse_perms
-      - namespace-profile-testing-cache
+      - namespace-profile-macos
     # environment:
     #   name: Test
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - run: |
-          echo "pwd: $(pwd)"
-          env
-      - name: Set up Go cache
-        uses: namespacelabs/nscloud-cache-action@4634f7d8dada6cf61d9e0de89e1262412372c92e
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        if: always()
         with:
-          path: |
-            ${{ env.WORKING_DIR }}/go-build
-            ${{ env.WORKING_DIR }}/pkg/mod
-      # - name: Breakpoint if tests failed
-      #   uses: namespacelabs/breakpoint-action@v0
-      #   with:
-      #     duration: 1h
-      #     authorized-users: gmichelo 
-      # - uses: actions/setup-python@v5
-      #   with:
-      #     python-version: '3.12' 
-      # - run: python --version
-      # - run: pip --version
-      # - name: Breakpoint if tests failed
-      #   uses: namespacelabs/breakpoint-action@v0
-      #   if: always()
-      #   with:
-      #     duration: 1h
-      #     authorized-users: gmichelo, hugosantos
-      - name: Env checks
-        run: |
-          # ulimit -a
-          # aws --version
-          docker buildx ls 
-          docker version
-          docker buildx version
-          env
-          sudo apt-get update -y 
-          sudo apt-get install dnsutils -y
-          dig rendezvous.namespace.so
-          # cat ~/.docker/config.json
-          # uname -a
-          # locale
-          
-          # cd /cache && df -h .
-          # node -v
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          repository: ghostty-org/ghostty
+          duration: 1h
+          authorized-users: gmichelo,hugosantos
 
-      # - name: Breakpoint if tests failed
-      #   uses: namespacelabs/breakpoint-action@v0
-      #   if: always()
-      #   with:
-      #     duration: 1h
-      #     authorized-users: gmichelo,hugosantos
+      
 
       - uses: snapcore/action-build@v1
       # - name: Test checkout of another private repository
