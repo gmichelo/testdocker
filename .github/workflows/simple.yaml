@@ -17,6 +17,9 @@ jobs:
         uses: actions/checkout@v4
       - run: |
           env
+      - run: |
+          docker pull ubuntu
+          docker pull golang
   ci:
     runs-on: 
       # - namespace-profile-with-caching
