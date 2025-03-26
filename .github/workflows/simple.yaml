@@ -20,67 +20,67 @@ jobs:
       - run: |
           docker pull ubuntu
           docker pull golang
-  ci:
-    runs-on: 
-      # - namespace-profile-with-caching
-      # - nscloud-exp-features:critical;github.mounted-scripts
-      # - nscloud-ubuntu-24.04-amd64-4x16
-      - namespace-profile-with-caching
-      - nscloud-exp-features:container.fix_fuse_perms
-    # environment:
-    #   name: Test
-    steps:
-      - uses: actions/checkout@v3
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        with:
-          duration: 30m
-          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,pavolmarko
+  # ci:
+  #   runs-on: 
+  #     # - namespace-profile-with-caching
+  #     # - nscloud-exp-features:critical;github.mounted-scripts
+  #     # - nscloud-ubuntu-24.04-amd64-4x16
+  #     - namespace-profile-with-caching
+  #     - nscloud-exp-features:container.fix_fuse_perms
+  #   # environment:
+  #   #   name: Test
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Breakpoint if tests failed
+  #       uses: namespacelabs/breakpoint-action@v0
+  #       with:
+  #         duration: 30m
+  #         authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,pavolmarko
       
-      - run: sw_vers -productVersion 
-      # - run: ls -lta /cache && echo "test" >> /cache/test && cat /cache/test
-      # - run: exit 1
-      # - run: |
-      #     cat $GITHUB_ENV
-      #     echo ${{ env.NSC_CONTAINER_REGISTRY }}
-      # - name: Env checks
-      #   run: |
-      #     nsc version
-      #     ps aux
-      #     ulimit -a
-      #     aws --version
-      #     docker buildx ls 
-      #     env
-      #     cat ~/.docker/config.json
-      #     uname -a
-      #     ls -lta /
-      #     ls -lta /cache
+  #     - run: sw_vers -productVersion 
+  #     # - run: ls -lta /cache && echo "test" >> /cache/test && cat /cache/test
+  #     # - run: exit 1
+  #     # - run: |
+  #     #     cat $GITHUB_ENV
+  #     #     echo ${{ env.NSC_CONTAINER_REGISTRY }}
+  #     # - name: Env checks
+  #     #   run: |
+  #     #     nsc version
+  #     #     ps aux
+  #     #     ulimit -a
+  #     #     aws --version
+  #     #     docker buildx ls 
+  #     #     env
+  #     #     cat ~/.docker/config.json
+  #     #     uname -a
+  #     #     ls -lta /
+  #     #     ls -lta /cache
 
-      - run: docker buildx build . 
+  #     - run: docker buildx build . 
 
-      - run: ls -lta /usr/lib/jvm
-      - run: ls -lta /home/runner
-      - run: env
-      - run: which gcloud
-      - run: gcloud version
-      - run: cmake --version
-      - run: terraform version
-      - run: ant -version
-      - run: yarn version
-      # Test dotnet installer (proinc)
-      - uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 8.0.x 
-          cache: false
+  #     - run: ls -lta /usr/lib/jvm
+  #     - run: ls -lta /home/runner
+  #     - run: env
+  #     - run: which gcloud
+  #     - run: gcloud version
+  #     - run: cmake --version
+  #     - run: terraform version
+  #     - run: ant -version
+  #     - run: yarn version
+  #     # Test dotnet installer (proinc)
+  #     - uses: actions/setup-dotnet@v3
+  #       with:
+  #         dotnet-version: 8.0.x 
+  #         cache: false
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 18
 
-      - run: pip install pre-commit
+  #     - run: pip install pre-commit
       
-      - run: |
-          time docker pull ubuntu
+  #     - run: |
+  #         time docker pull ubuntu
   # ci-gh-runner:
   #   runs-on: ubuntu-20.04
   #   steps:
