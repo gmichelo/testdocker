@@ -20,7 +20,9 @@ jobs:
       - run: |
           docker pull ubuntu
           docker pull golang
-          docker pull registry.zrh-services.namespace.systems/namespacelabs.dev/internal/service/githubrunner/container/ubuntu2404-systemd@sha256:cd8a562ceada6fd238b5c60f773a86871317a85b039e78de07797771f8c8c3e3
+          docker pull nginx 
+          docker pull jupyter/all-spark-notebook
+          docker pull pytorch/pytorch
   # ci:
   #   runs-on: 
   #     # - namespace-profile-with-caching
