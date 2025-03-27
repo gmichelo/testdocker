@@ -18,7 +18,6 @@ jobs:
       - run: |
           env
       - run: |
-          docker pull apache/hadoop
           docker pull apache/spark
           docker pull ubuntu
           docker pull golang
