@@ -18,6 +18,7 @@ jobs:
       - run: |
           env
       - run: |
+          docker pull microsoft/mssql-server-linux
           docker pull ubuntu
           docker pull golang
           docker pull nginx 
