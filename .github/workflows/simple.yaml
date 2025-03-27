@@ -20,9 +20,7 @@ jobs:
       - run: |
           docker pull ubuntu
           docker pull golang
-          docker pull registry.zrh-services.namespace.systems/namespacelabs.dev/internal/service/githubrunner/container/ubuntu2204@sha256:b89b9223b68321750cf2feb0257e8dd407d85f0df1e1e3aeea6ae8c9f3361456
           docker pull registry.zrh-services.namespace.systems/namespacelabs.dev/internal/service/githubrunner/container/ubuntu2404-systemd@sha256:cd8a562ceada6fd238b5c60f773a86871317a85b039e78de07797771f8c8c3e3
-          docker pull registry.zrh-services.namespace.systems/namespacelabs.dev/internal/service/githubrunner/container/ubuntu2004@sha256:c86181b859faafb2370b1369cf9188cf8496a8f34fc5e488f2a754aa61e199ea
   # ci:
   #   runs-on: 
   #     # - namespace-profile-with-caching
