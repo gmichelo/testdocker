@@ -22,10 +22,10 @@ jobs:
           docker pull ubuntu
           docker pull golang
           docker pull nginx 
-          # docker pull jupyter/all-spark-notebook
+          docker pull jupyter/all-spark-notebook
           docker pull pytorch/pytorch
           docker pull mongo
-          # docker pull tensorflow/tensorflow
+          docker pull tensorflow/tensorflow
   # ci:
   #   runs-on: 
   #     # - namespace-profile-with-caching
