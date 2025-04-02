@@ -5,10 +5,7 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      - namespace-profile-with-caching
-      - nscloud-exp-features:container.fix_fuse_perms
-      - nscloud-exp-features:critical;github.mounted-scripts
-      
+      - namespace-profile-custom-base-image
       # - nscloud-ubuntu-24.04-amd64-4x16
     # environment:
     #   name: Test
@@ -16,16 +13,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - run: |
-          env
-      - run: |
-          docker pull apache/spark
-          docker pull ubuntu
-          docker pull golang
-          docker pull nginx 
-          docker pull jupyter/all-spark-notebook
-          docker pull pytorch/pytorch
-          docker pull mongo
-          docker pull tensorflow/tensorflow
+          which vim
+      # - run: |
+      #     docker pull apache/spark
+      #     docker pull ubuntu
+      #     docker pull golang
+      #     docker pull nginx 
+      #     docker pull jupyter/all-spark-notebook
+      #     docker pull pytorch/pytorch
+      #     docker pull mongo
+      #     docker pull tensorflow/tensorflow
   # ci:
   #   runs-on: 
   #     # - namespace-profile-with-caching
