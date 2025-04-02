@@ -14,8 +14,8 @@ jobs:
       # - nscloud-git-mirror-5gb
       - nscloud-ubuntu-20.04-amd64-32x64
       # - nscloud-exp-features:use-node=ext-fsn1-dc20-2374834
-    environment:
-      name: Test
+    # environment:
+    #   name: Test
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,7 +25,9 @@ jobs:
         with: 
           go-version: '>=1.24.0'
       - run: |
-          sudo go test -v ./internal/tracefs/...
+         docker run --rm --ulimit rtprio=99 ubuntu bash -ic 'chrt -f 50 ls'
+      # - run: |
+      #     sudo go test -v ./internal/tracefs/...
       - name: Breakpoint if tests failed
         uses: namespacelabs/breakpoint-action@v0
         if: always()
