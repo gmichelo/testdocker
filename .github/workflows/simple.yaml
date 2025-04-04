@@ -17,6 +17,8 @@ jobs:
     # environment:
     #   name: Test
     steps:
+      - run: 
+          ls -lta /home
       - name: Checkout
         uses: actions/checkout@v4
         with: 
@@ -124,6 +126,8 @@ jobs:
       id-token: write
       contents: read
     steps:
+      - run: 
+          ls -lta /home
       - name: Checkout
         uses: actions/checkout@v4
         with: 
