@@ -133,8 +133,12 @@ jobs:
           ls -lta /home
       - name: Checkout
         uses: actions/checkout@v4
-        with: 
-          repository: cilium/ebpf
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: user/app:latest
       - run: |
           docker run --privileged --rm --ulimit rtprio=99 ubuntu bash -ic 'chrt -f 50 ls'
       - uses: actions/setup-go@v5
