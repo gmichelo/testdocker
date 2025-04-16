@@ -133,6 +133,7 @@ jobs:
           ls -lta /home
       - name: Checkout
         uses: actions/checkout@v4
+      - uses: namespacelabs/nscloud-setup@v0
       - name: Configure Docker to use Namespace Remote Builders
         uses: namespacelabs/nscloud-setup-buildx-action@v0
       - name: Build and push
