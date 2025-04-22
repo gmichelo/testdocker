@@ -8,19 +8,21 @@ env:
 jobs:
   ci-1:
     runs-on:
-      # - nscloud-cache-size-50gb
-      # - nscloud-cache-tag-builds
-      # - nscloud-exp-runner-tool-cache-20gb
-      # - nscloud-git-mirror-5gb
-      - nscloud-ubuntu-24.04-amd64-32x64-with-features
-      - nscloud-exp-features:docker.bin=guest-injected
+      - nscloud-cache-size-50gb
+      - nscloud-cache-tag-builds
+      - nscloud-exp-runner-tool-cache-20gb
+      - nscloud-git-mirror-5gb
+      - nscloud-ubuntu-24.04-amd64-32x64-with-cache
+      # - nscloud-exp-features:docker.bin=guest-injected
     # environment:
     #   name: Test
     steps:
       - run: 
           ls -lta /home
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: namespacelabs/nscloud-checkout-action@v6
+        with:
+          ref: gmichelo.NSL-1234.test-branch
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
