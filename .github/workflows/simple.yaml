@@ -20,7 +20,7 @@ jobs:
       - run: 
           ls -lta /home
       - name: Checkout
-        uses: namespacelabs/nscloud-checkout-action@6dcf732368465c25b0a8f7c5289380fb25710005
+        uses: namespacelabs/nscloud-checkout-action@v6
         with:
           ref: gmichelo.NSL-1234.test-branch
       # - name: Build and push
