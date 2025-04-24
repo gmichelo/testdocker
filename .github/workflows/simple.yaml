@@ -5,7 +5,13 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      - namespace-profile-custom-base-image
+      - nscloud-cache-allow-commit-from-main
+      - nscloud-cache-huggingface
+      - nscloud-cache-size-100gb
+      - nscloud-cache-tag-magnus-localstack-cache
+      - nscloud-exp-container-image-cache
+      - nscloud-no-remote-builders
+      - nscloud-ubuntu-22.04-amd64-8x32-with-cache
       # - nscloud-ubuntu-24.04-amd64-4x16
     # environment:
     #   name: Test
