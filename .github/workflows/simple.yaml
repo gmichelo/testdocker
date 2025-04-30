@@ -10,7 +10,7 @@ jobs:
       - nscloud-cache-tag-magnus-localstack-cache
       - nscloud-exp-container-image-cache
       - nscloud-no-remote-builders
-      - nscloud-ubuntu-22.04-amd64-8x32-with-cache
+      - nscloud-ubuntu-22.04-amd64-32x64-with-cache
       # - nscloud-ubuntu-24.04-amd64-4x16
     # environment:
     #   name: Test
