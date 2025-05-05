@@ -5,13 +5,7 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      - nscloud-cache-allow-commit-from-main
-      - nscloud-cache-size-100gb
-      - nscloud-cache-tag-magnus-localstack-cache
-      - nscloud-exp-container-image-cache
-      - nscloud-no-remote-builders
-      - nscloud-ubuntu-22.04-amd64-32x64-with-cache
-      # - nscloud-ubuntu-24.04-amd64-4x16
+      - my-alias
     # environment:
     #   name: Test
     steps:
