@@ -20,11 +20,11 @@ jobs:
           env
           cat ~/.docker/config.json
 
-      - name: Breakpoint if tests failed
-        uses: namespacelabs/breakpoint-action@v0
-        with:
-          duration: 30m
-          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,pavolmarko
+      # - name: Breakpoint if tests failed
+      #   uses: namespacelabs/breakpoint-action@v0
+      #   with:
+      #     duration: 30m
+      #     authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,pavolmarko
 
       - uses: actions/checkout@v3
 
