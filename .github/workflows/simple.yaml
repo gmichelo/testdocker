@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - run: |
-          which vim
       - name: Breakpoint if tests failed
         uses: namespacelabs/breakpoint-action@v0
         with:
