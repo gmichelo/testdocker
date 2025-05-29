@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      - my-alias
+      - nscloud
     # environment:
     #   name: Test
     steps:
@@ -13,6 +13,11 @@ jobs:
         uses: actions/checkout@v4
       - run: |
           which vim
+      - name: Breakpoint if tests failed
+        uses: namespacelabs/breakpoint-action@v0
+        with:
+          duration: 30m
+          authorized-users: edganiukov,hugosantos,n-g,htr,nichtverstehen,gmichelo,annervisser
       # - run: |
       #     docker pull apache/spark
       #     docker pull ubuntu
