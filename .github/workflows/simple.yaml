@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      - namespace-profile-default
+      - nscloud-windows-2022-amd64-4x16
     # environment:
     #   name: Test
     steps:
