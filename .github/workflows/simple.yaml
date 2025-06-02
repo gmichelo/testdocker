@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      - namespace-profile-amd64-with-caching;cache.volume-tag=foobar
+      - namespace-profile-default
     # environment:
     #   name: Test
     steps:
