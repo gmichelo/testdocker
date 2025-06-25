@@ -5,7 +5,7 @@ name: simple
 jobs:
   ci-1:
     runs-on: 
-      - namespace-profile-with-caching
+      - namespace-profile-with-caching;overrides.cache-tag=foobar
     # environment:
     #   name: Test
     steps:
